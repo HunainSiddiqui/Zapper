@@ -1,0 +1,3 @@
+type PartnersTypes = {
+  url: string;
+};

@@ -34,13 +34,10 @@ router.post("/signup", async (req, res) => {
     await prismaClient.user.create({
         data: {
             email: parsedData.data.username,
-            // TODO: Dont store passwords in plaintext, hash it
             password: parsedData.data.password,
             name: parsedData.data.name
         }
     })
-
-    // await sendEmail();
 
     return res.json({
         message: "Please verify your account by checking your email"
@@ -82,7 +79,6 @@ router.post("/signin", async (req, res) => {
 })
 
 router.get("/", authMiddleware, async (req, res) => {
-    // TODO: Fix the type
     // @ts-ignore
     const id = req.id;
     const user = await prismaClient.user.findFirst({

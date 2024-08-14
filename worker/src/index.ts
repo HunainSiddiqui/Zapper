@@ -24,7 +24,7 @@ async function main() {
     await consumer.subscribe({ topic: TOPIC_NAME, fromBeginning: true })
 
     await consumer.run({
-        autoCommit: false,
+        autoCommit: false,  // for acknoledgement
         eachMessage: async ({ topic, partition, message }) => {
           console.log({
             partition,
@@ -68,23 +68,22 @@ async function main() {
             const body = parse((currentAction.metadata as JsonObject)?.body as string, zapRunMetadata);
             const to = parse((currentAction.metadata as JsonObject)?.email as string, zapRunMetadata);
             console.log(`Sending out email to ${to} body is ${body}`)
-            await sendEmail(to, body);
+            // await sendEmail(to, body);
           }
 
-          if (currentAction.type.id === "send-sol") {
+          // if (currentAction.type.id === "send-sol") {
 
-            const amount = parse((currentAction.metadata as JsonObject)?.amount as string, zapRunMetadata);
-            const address = parse((currentAction.metadata as JsonObject)?.address as string, zapRunMetadata);
-            console.log(`Sending out SOL of ${amount} to address ${address}`);
-            await sendSol(address, amount);
-          }
+          //   const amount = parse((currentAction.metadata as JsonObject)?.amount as string, zapRunMetadata);
+          //   const address = parse((currentAction.metadata as JsonObject)?.address as string, zapRunMetadata);
+          //   console.log(`Sending out SOL of ${amount} to address ${address}`);
+          //   await sendSol(address, amount);
+          // }
           
           // 
           await new Promise(r => setTimeout(r, 500));
 
           const lastStage = (zapRunDetails?.zap.actions?.length || 1) - 1; // 1
-          console.log(lastStage);
-          console.log(stage);
+         
           if (lastStage !== stage) {
             console.log("pushing back to the queue")
             await producer.send({
