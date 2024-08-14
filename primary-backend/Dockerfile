@@ -19,9 +19,6 @@ COPY . .
 
 RUN npm run build
 
-run npx prisma migrate deploy
-run npx prisma generate
-run npm run seed
 
 
 
