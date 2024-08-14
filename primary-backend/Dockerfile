@@ -16,7 +16,11 @@ COPY . .
 
 RUN npm run build
 
-RUN npm run seed
+run npx prisma migrate deploy
+run npx prisma generate
+run npm run seed
+
+
 
 EXPOSE 3000
 
