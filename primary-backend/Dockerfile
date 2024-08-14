@@ -16,6 +16,7 @@ COPY . .
 
 RUN npm run build
 
+RUN npm run seed
 
 EXPOSE 3000
 
