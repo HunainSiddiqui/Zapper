@@ -14,7 +14,7 @@ RUN npx prisma generate
 COPY . .
 
 
-RUN tsc -b
+RUN npm run build
 
 
 EXPOSE 3000
