@@ -5,6 +5,7 @@ WORKDIR /app
 
 COPY package* .
 COPY ./prisma .
+COPY ./dist .
 
 
 RUN npm install
