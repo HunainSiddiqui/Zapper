@@ -5,13 +5,17 @@ WORKDIR /app
 
 COPY package* .
 COPY ./prisma .
-COPY ./dist .
+
 
 
 RUN npm install
 RUN npx prisma generate
 
 COPY . .
+
+
+RUN tsc -b
+
 
 EXPOSE 3000
 
