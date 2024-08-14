@@ -28,7 +28,7 @@ function useAvailableActionsAndTriggers() {
     }
 }
 
-export default function() {
+export default function Zap() {
   const router = useRouter();
   const { availableActions, availableTriggers } =
     useAvailableActionsAndTriggers();
@@ -100,7 +100,7 @@ export default function() {
         </div>
         <div className="w-full pt-2 pb-2">
           {selectedActions.map((action, index) => (
-            <div className="pt-2 flex justify-center">
+            <div key={index}className="pt-2 flex justify-center">
               {" "}
               <ZapCell
                 onClick={() => {
@@ -220,7 +220,7 @@ function Modal({ index, onSelect, availableItems }: { index: number, onSelect: (
                     }} />}
 
                     {step === 0 && <div>{availableItems.map(({id, name, image}) => {
-                            return <div onClick={() => {
+                            return <div key = {id} onClick={() => {
                                 if (isTrigger) {
                                     onSelect({
                                         id,
