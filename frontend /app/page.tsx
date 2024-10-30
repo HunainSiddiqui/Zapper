@@ -13,10 +13,11 @@ export default function Home() {
       <Appbar />
       <Hero />
 
-      <div className="pt-8">
+      {/* <div className="pt-8">
         <HeroVideo />
-      </div>
-      <br />
+      </div> */}
+      
+     
       <Branding/>
       <Benefits/>
       <Cards/>

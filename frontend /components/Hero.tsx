@@ -9,11 +9,11 @@ export const Hero = () => {
     const words = ["Automate", "Streamline", "Digitize", "Mechanize"];
     const router = useRouter();
     return (
-      <div>
+      <div >
         <div className="flex justify-center">
           <div className="font-serif font-semibold text-5xl  text-center pt-8 max-w-xl">
             <FlipWords words={words} />
-            as fast as you can type
+            as fast as you can type 
           </div>
         </div>
         <div className="flex justify-center pt-2">
