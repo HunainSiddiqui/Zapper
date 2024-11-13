@@ -1,5 +1,7 @@
 import { PrismaClient } from "@prisma/client";
 import {Kafka} from "kafkajs";
+import 'dotenv/config'
+
 
 const TOPIC_NAME = "zap-events"
 

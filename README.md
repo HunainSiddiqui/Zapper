@@ -35,8 +35,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 ![image](https://github.com/user-attachments/assets/2f87d5a8-57f4-4e0d-a488-63976141979c)
 ![image](https://github.com/user-attachments/assets/7e1d73fa-88bf-4f2e-b520-48b6c9475427)
 ![image](https://github.com/user-attachments/assets/9e8c1574-7362-49af-8e38-ec1f906b122c)
-
-
+![image](<Screenshot 2024-10-30 at 10.03.34 PM.png>)
 
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
